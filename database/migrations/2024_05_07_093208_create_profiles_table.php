@@ -11,15 +11,16 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('profiles', function (Blueprint $table) {
             $table->id();
-            $table->string('nama_akun');
+            $table->unsignedBigInteger('user_id');
+            $table->string('nama_toko');
             $table->string('email')->unique();
-            $table->enum('gender', ['male', 'female', 'other']);
-            $table->integer('umur');
-            $table->date('tanggal_lahir');
-            $table->string('alamat');
+            $table->integer('rate');
+            $table->string('produk_terbaik');
+            $table->text('deskripsi');
             $table->timestamps();
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 
@@ -28,6 +29,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('profiles');
     }
 };

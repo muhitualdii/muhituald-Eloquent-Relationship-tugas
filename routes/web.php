@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MasterController;
 use App\Http\Controllers\FormController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ProfileController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -40,4 +41,10 @@ Route::put('/produk/{id}', [ProductController::class, 'update'])->name('produk.u
 
 //delete
 Route::delete('/produk/{id}', [ProductController::class, 'destroy'])->name('produk.destroy');
+
+//user
+Route::get('user', [ProductController::class, 'user'])->name('user');
+
+//profile
+Route::get('/profile', [ProfileController::class, 'profile'])->name('profile');
 

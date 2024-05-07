@@ -15,6 +15,7 @@
                 <div class="d-flex justify-content-center align-items-center text-center">
                     <a href="{{ route('admin') }}" class="btn btn-primary">Halaman Admin</a>
                     <h3 class="display-4 mx-auto"><strong>PRODUCTS</strong></h3>
+                    <a href="{{ route('user') }}" class="btn btn-success">Halaman Pengguna Merchent</a>
                 </div>
 
 

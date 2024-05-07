@@ -8,6 +8,7 @@ use App\Models\Product;
 
 class ProductController extends Controller
 {
+
     public function index()
     {
         $produk = Product::all();
@@ -17,6 +18,15 @@ class ProductController extends Controller
         ]);
     }
 
+
+    public function user()
+    {
+        $produk = Product::all();
+
+        return view('user', [
+            'produk' => $produk,
+        ]);
+    }
     //admin
     public function admin()
     {
