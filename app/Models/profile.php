@@ -9,11 +9,13 @@ class profile extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'user_id', 'nama_toko', 'email', 'rate', 'produk_terbaik', 'deskripsi',
+    ];
 
-    public function profile()
+    public function user()
     {
-        return $this->hasOne(Profile::class);
+        return $this->belongsTo(User::class);
     }
-
 }
 
