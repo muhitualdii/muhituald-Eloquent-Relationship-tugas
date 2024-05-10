@@ -14,11 +14,15 @@ return new class extends Migration
         Schema::create('users', function (Blueprint $table) {
             $table->id();
             $table->string('nama_akun');
+            $table->string('nama_toko');
             $table->string('email')->unique();
             $table->enum('gender', ['male', 'female', 'other']);
             $table->integer('umur');
             $table->date('tanggal_lahir');
             $table->string('alamat');
+            $table->integer('rate');
+            $table->string('produk_terbaik');
+            $table->text('deskripsi');
             $table->timestamps();
         });
     }

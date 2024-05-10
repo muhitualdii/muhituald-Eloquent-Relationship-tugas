@@ -8,25 +8,16 @@ use App\Models\Profile;
 
 class ProfileController extends Controller
 {
-    public function profile()
+    public function showUserProfile()
     {
-
-        $user = new User();
-        $user->nama_akun = 'amandemy';
-        $user->email = 'amandemy@gmail.com';
-        $user->gender = 'male';
-        $user->tanggal_lahir = '1982-10-10';
-        $user->alamat = 'jl.garuda';
-
-
-        $profile = new Profile();
-        $profile->nama_toko = 'amanah';
-        $profile->email = 'amandemy1@gmail.com';
-        $profile->rate = 3;
-        $profile->produk_terbaik = 'kucing';
-        $profile->deskripsi = 'menjaga kualitas';
-
-
-        return view('profile', compact('user', 'profile'));
+        $user = User::find(1);
+return view('profile', ['user' => $user]);
     }
+
+    public function showUser2Profile()
+    {
+        $user = User::find(2);
+return view('profile2', ['user' => $user]);
+    }
+
 }

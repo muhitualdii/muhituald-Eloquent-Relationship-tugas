@@ -5,14 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>User Profile</title>
-    <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 
 <body>
     <div class="row mt-3">
         <div class="col-md-12 text-center">
-            <a href="{{ route('user-1') }}" class="btn btn-success">Kembali ke Halaman Admin</a>
+            <a href="{{ route('user-2') }}" class="btn btn-success">Kembali ke Halaman Admin</a>
         </div>
     </div>
     <div class="container mt-5">

@@ -15,13 +15,14 @@ return new class extends Migration
     {
         Schema::create('products', function (Blueprint $table) {
             $table->id();
-            $table->string('nama');
+            $table->string('nama_produk');
             $table->integer('harga');
             $table->integer('stok');
             $table->float('berat');
             $table->text('gambar');
             $table->enum('kondisi', ['Baru', 'Bekas']);
             $table->text('deskripsi');
+            $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->timestamps();
         });
     }

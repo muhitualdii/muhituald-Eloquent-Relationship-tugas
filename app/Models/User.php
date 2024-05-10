@@ -42,13 +42,18 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
-    public function user()
+
+
+    public function profile()
     {
-        return $this->belongsTo(User::class);
+        return $this->hasOne(Profile::class);
     }
 
-    public function isAdmin()
-{
-    return $this->role === 'admin'; // Anda dapat menyesuaikan dengan logika autentikasi Anda
-}
+    public function product()
+    {
+        return $this->hasMany(Product::class);
+    }
+
+
+
 }
